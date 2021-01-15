@@ -1,0 +1,24 @@
+//Create a Directory for the Website
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Welcome to SCA Cloud School Application</h>
+</html>
+
+</body>
+
+
+//Create a file called Dockerfile
+From nginx:alphine 
+COPY ./usr/share/nginx/html
+
+
+//Build the Docker Image for the HTML Server
+docker build -t html-server-image:v1 
+
+//Run the following command to run the HTML container server:
+docker run -d -p 80:80 html-server-image:v1
+
+//Run the following command to ensure the server is running:
+curl localhost:80
+
